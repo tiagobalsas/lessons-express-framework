@@ -18,6 +18,10 @@ app.get('/feedback', (req, res) => {
   `);
 });
 
+app.post('/feedback', (req, res) => {
+  res.send('Formulário recebido com sucesso');
+});
+
 const PORT = 3000;
 const HTTP_OK = 'online';
 
