@@ -1,3 +1,4 @@
+const { query } = require('express');
 const express = require('express');
 const app = express();
 
@@ -17,8 +18,8 @@ app.get('/feedback/:id?', (req, res) => {
     res.send(req.params.id);
 });
 
-app.post('/formulario', (req, res) => {
-  res.send('Formulário recebido com sucesso');
+app.get('/formulario', (req, res) => {
+  res.send(req.query);
 });
 
 const PORT = 3000;
