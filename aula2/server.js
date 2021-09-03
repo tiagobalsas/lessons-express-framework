@@ -2,6 +2,8 @@ const { query } = require('express');
 const express = require('express');
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/', (req, res) => {
   res.send(`
   <body style="background-color:AliceBlue;">
@@ -15,11 +17,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/feedback/:id?', (req, res) => {
-    res.send(req.params.id);
+  res.send(req.params.id);
 });
 
 app.get('/formulario', (req, res) => {
   res.send(req.query);
+});
+
+app.post('/', (req, res) => {
+  res.send(`O meu primeiro nome é: ${req.body.fname}`);
 });
 
 const PORT = 3000;
