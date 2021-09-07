@@ -1,5 +1,5 @@
 exports.paginaInicial = (req, res) => {
-  res.render(index);
+  res.render('index');
 };
 
 exports.msgFeedback = (req, res) => {
