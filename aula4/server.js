@@ -1,9 +1,14 @@
 const express = require('express');
 const app = express();
-const routes = require('./routes')
+const routes = require('./routes');
+const path = require('path');
 
 app.use(express.urlencoded({ extended: true }));
-app.use(routes)
+
+app.set('views', path(__dirname, 'src', 'views'));
+app.set('views engine', 'ejs');
+
+app.use(routes);
 
 const PORT = 3000;
 const HTTP_OK = 'online';
