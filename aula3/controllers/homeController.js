@@ -1,4 +1,4 @@
-exports.paginaInicial = (req, res)=>{
+exports.paginaInicial = (req, res) => {
   res.send(`
   <body style="background-color:AliceBlue;">
     <form action="/" method="POST">
@@ -8,4 +8,8 @@ exports.paginaInicial = (req, res)=>{
     </form>
   </body>
   `);
-}
+};
+
+exports.msgFeedback = (req, res) => {
+  res.send(`<h1>Formulário enviado com sucesso!</h1>`);
+};
